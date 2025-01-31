@@ -1,0 +1,24 @@
+flutter_native_splash:
+  color: "212121"
+  image: assets/logo/logoRouteSplash.png
+  branding: assets/logo/routeBranding.png
+  branding_mode: bottom
+  branding_bottom_padding: 24
+
+  color_dark: "212121"
+  image_dark: assets/logo/logoRouteSplash.png
+  branding_dark: assets/logo/routeBranding.png
+
+  android_12:
+    color: "212121"
+    image: assets/logo/logoRouteSplash.png
+    branding: assets/logo/routeBranding.png
+    branding_mode: bottom
+    branding_bottom_padding: 24
+    color_dark: "212121"
+    image_dark: assets/logo/logoRouteSplash.png
+    branding_dark: assets/logo/routeBranding.png
+
+  android: true
+  ios: true
+  web: true
