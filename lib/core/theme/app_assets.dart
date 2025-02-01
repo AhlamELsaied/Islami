@@ -33,6 +33,7 @@ class AppAssets{
   static const String radio="assets/icons/radio.png";
   static const String sebhaIcon="assets/icons/sebhaIcon.png";
   static const String time="assets/icons/time.png";
+  static const String earphone="assets/icons/earphone.png";
 
 
 
@@ -47,5 +48,6 @@ class AppAssets{
   static const String cornerrLeft="assets/background/cornerrLeft.png";
   static const String hadeth="assets/background/quranSura.png";
   static const String backgroundCard="assets/background/backgroundCard.png";
+  static const String prayTime="assets/background/prayTime.png";
 
 }

@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:islami/core/theme/app_assets.dart';
 import 'package:islami/core/theme/app_color.dart';
 import 'package:islami/core/widget/custom_Scaffold.dart';
+import 'package:islami/screen/home_screen/azan/widget/prayTime.dart';
 import 'package:islami/screen/home_screen/azan/widget/widget.dart';
 
 class AzanScreen extends StatelessWidget {
-
   AzanScreen({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -27,27 +26,24 @@ class AzanScreen extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.15,
                 ),
               ),
-
-              const Spacer(),
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: CarouselSlider.builder(
                   itemCount: PrayTime.prayers.length,
                   itemBuilder: (context, index, realIndex) {
                     return Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       child: PrayCard(prayer: PrayTime.prayers[index]),
                     );
                   },
                   options: CarouselOptions(
-                    height: MediaQuery.of(context).size.height * 0.3,
+                    height: MediaQuery.of(context).size.height * 0.29,
                     viewportFraction: 0.8,
                     enlargeCenterPage: true,
                     enableInfiniteScroll: true,
                   ),
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: SizedBox(
@@ -63,17 +59,15 @@ class AzanScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const Spacer(),
+              Spacer(),
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _buildAzkarCard(
-                        AppAssets.evening, "Evening Azkar", context),
+                    _buildAzkarCard(AppAssets.evening, "Evening Azkar", context),
                     const SizedBox(width: 20),
-                    _buildAzkarCard(
-                        AppAssets.morning, "Morning Azkar", context),
+                    _buildAzkarCard(AppAssets.morning, "Morning Azkar", context),
                   ],
                 ),
               ),
@@ -84,24 +78,18 @@ class AzanScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAzkarCard(
-    String imagePath,
-    String text,
-    BuildContext context,
-  ) {
-    return Expanded(
+  Widget _buildAzkarCard(String imagePath, String text, BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.45,
+      height: MediaQuery.of(context).size.width* 0.68,
+      decoration: BoxDecoration(
+        color: AppColor.Black,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: AppColor.Gold, width: 2),
+      ),
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width * 0.6,
-            height: MediaQuery.of(context).size.width * 0.6,
-            decoration: BoxDecoration(
-              color: AppColor.Black,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: AppColor.Gold, width: 2),
-            ),
-          ),
           Positioned.fill(
             child: Image.asset(
               imagePath,
