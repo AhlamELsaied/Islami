@@ -40,7 +40,7 @@ class AppAssets{
   //background
   static const String closeUp="assets/background/close-up-islamic-new-year-with-quran-books.png";
   static const String mosqueBackGround="assets/background/mosque.png";
-  static const String womanReading="assets/background/silhouette-woman-reading-quran.png";
+  static const String womanReading="assets/background/womenReading.png";
   static const String tajMahal="assets/background/taj-mahal1.png";
   static const String tajMahalInside="assets/background/taj-mahal-agra-india 1.png";
   static const String verticalMorocco="assets/background/verticalMorocco.png";
