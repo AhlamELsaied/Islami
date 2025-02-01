@@ -21,44 +21,48 @@ height: MediaQuery.of(context).size.height*0.15,
               image: AssetImage(AppAssets.mosqueBackGround),
               fit: BoxFit.cover,
               opacity: 0.6)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            item.name,
-            style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: AppColor.Black),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.favorite,
-                    color: AppColor.Black,
-                    size: 35,
-                  )),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.play_arrow,
-                    color: AppColor.Black,
-                    size: 35,
-                  )),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.volume_down_rounded,
-                    color: AppColor.Black,
-                    size: 35,
+      child: Expanded(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              item.name,
+              style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: AppColor.Black),
+            ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.favorite,
+                        color: AppColor.Black,
+                        size: 35,
+                      )),
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.play_arrow,
+                        color: AppColor.Black,
+                        size: 35,
+                      )),
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.volume_down_rounded,
+                        color: AppColor.Black,
+                        size: 35,
+                      )
                   )
-              )
-            ],
-          )
-        ],
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

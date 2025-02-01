@@ -31,25 +31,27 @@ class CustomWidgetReciters extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: AppColor.Black),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.play_arrow,
-                    color: AppColor.Black,
-                    size: 35,
-                  )),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.volume_down_rounded,
-                    color: AppColor.Black,
-                    size: 35,
-                  )
-              )
-            ],
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.play_arrow,
+                      color: AppColor.Black,
+                      size: 35,
+                    )),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.volume_down_rounded,
+                      color: AppColor.Black,
+                      size: 35,
+                    )
+                )
+              ],
+            ),
           )
         ],
       ),
