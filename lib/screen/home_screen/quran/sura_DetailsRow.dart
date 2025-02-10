@@ -4,6 +4,8 @@ import 'package:islami/core/routes/app_routes_name.dart';
 import 'package:islami/core/theme/app_assets.dart';
 import 'package:islami/core/theme/app_color.dart';
 import 'package:islami/core/widget/custom_Scaffold.dart';
+import 'package:islami/screen/home_screen/quran/quran_screen.dart';
+import 'package:islami/screen/home_screen/quran/widget/cardSura.dart';
 import 'package:islami/screen/home_screen/quran/widget/suraData.dart';
 
 class SuraDetailsScreenRow extends StatefulWidget {
@@ -18,17 +20,12 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreenRow> {
   List<String> suraList = [];
 
   @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration.zero, () {
-      var argu = ModalRoute.of(context)!.settings.arguments as SuraData;
-      ReadFile(argu.suraIndex);
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     var argu = ModalRoute.of(context)!.settings.arguments as SuraData;
+
+    if (sura.isEmpty) {
+      ReadFile(argu.suraIndex);
+    }
 
     return Customscaffold(
       child: Scaffold(
@@ -93,51 +90,26 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreenRow> {
                   child: suraList.isEmpty
                       ? const Center(child: CircularProgressIndicator())
                       : SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: Text.rich(
-                          TextSpan(
-                            children: suraList.map((e) {
-                              int index = suraList.indexOf(e);
-                              return TextSpan(
-                                text: e,
-                                style: const TextStyle(
-                                  color: AppColor.Gold,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
-                                children: [
-                                  WidgetSpan(
-                                    child: Stack(
-                                      alignment: Alignment.center,
+                          child: Padding(
+                              padding: const EdgeInsets.all(16),
+                              child: Text.rich(
+                                TextSpan(
+                                    children: suraList.map((e) {
+                                  int index = suraList.indexOf(e);
+                                  return TextSpan(
+                                      text: e,
+                                      style: const TextStyle(
+                                          color: AppColor.Gold,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
                                       children: [
-                                        Image.asset(
-                                          AppAssets.arabicArt,
-                                          width: 20,
-                                        ),
-                                        Text(
-                                          (index + 1).toString(),
-                                          style: const TextStyle(
-                                            color: Colors.blueGrey,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 9
-                                          ),
-                                          textAlign: TextAlign.center,
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              );
-                            }).toList(),
-                          ),
-                          textAlign: TextAlign.center,
+                                        TextSpan(text:"[${(index + 1) }] ",style: const TextStyle(color:Colors.brown)),
+                                      ]);
+                                }).toList()),
+                                textDirection: TextDirection.rtl,
+                                textAlign: TextAlign.right,
+                              )),
                         ),
-                      ),
-                    ),
-                  ),
                 ),
               ],
             ),
@@ -162,11 +134,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreenRow> {
   }
 
   void ReadFile(int index) async {
-    String data =
-    await rootBundle.loadString('assets/sura/sura_data/${index + 1}.txt');
-    setState(() {
-      sura = data;
-      suraList = sura.trim().split("\n");
-    });
+    sura =
+        await rootBundle.loadString('assets/sura/sura_data/${index + 1}.txt');
+    suraList = sura.trim().split("\n");
+    setState(() {});
   }
 }
