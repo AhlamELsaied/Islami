@@ -3,7 +3,9 @@ import 'package:islami/core/routes/app_routes_name.dart';
 import 'package:islami/core/theme/app_assets.dart';
 import 'package:islami/core/theme/app_color.dart';
 import 'package:islami/core/widget/custom_Scaffold.dart';
+import 'package:islami/screen/home_screen/quran/quran_screen.dart';
 import 'package:islami/screen/home_screen/quran/widget/cardSura.dart';
+import 'package:islami/screen/home_screen/quran/widget/suraData.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class QuranScreen extends StatefulWidget {
@@ -608,16 +610,4 @@ class _QuranScreenState extends State<QuranScreen> {
   }
 }
 
-class SuraData {
-  final String arSura;
-  final String enSura;
-  final String suraVer;
-  final int suraIndex;
 
-  SuraData(
-    this.arSura,
-    this.enSura,
-    this.suraIndex,
-    this.suraVer,
-  );
-}

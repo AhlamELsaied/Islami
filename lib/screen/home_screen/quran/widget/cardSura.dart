@@ -3,6 +3,7 @@ import 'package:islami/core/routes/app_routes_name.dart';
 import 'package:islami/core/theme/app_assets.dart';
 import 'package:islami/core/theme/app_color.dart';
 import 'package:islami/screen/home_screen/quran/quran_screen.dart';
+import 'package:islami/screen/home_screen/quran/widget/suraData.dart';
 
 class CardSura extends StatelessWidget {
  final SuraData dataSura;
